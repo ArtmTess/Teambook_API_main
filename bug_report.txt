@@ -1,0 +1,53 @@
+1. Not able to Activate project (fixed).
+Steps:
+1. From Projects page archive a project.
+2. From drop-down menu on projects page select 'Archived'.
+3. Check the project and point your mouse to sign "+", notice tooltip 'Activate project', click on the sign '+'.
+Expected result: a pop up message about activation project. Able to activate project.
+Actual result: The pop-up with 'delete' button instead of activate, 'delete' doesn't work either.
+
+
+2. Able to create tag with empty name.
+Steps:
+1. Go to "Users" page.
+2. Click "Manage Tags".
+3 Click "+".
+4 In "tagName" input field hit "space" button 3 times or more.
+5 Save.
+Expected result: A message that not able to create a tag with empty name.
+Actual result: The tag with no name created.
+
+
+3. Need to refresh the page to see updates.
+Conditions: Only for automation process.
+Steps:
+1. Run automated test case for create, update, delete projects.
+2. Check updates.
+Expected result: not need to refresh the page to see updates.
+Actual: need to refresh the page.
+
+
+4. Able to create Team without name.
+Steps:
+1. Go to Planning page.
+2. Click on Team (cssSelector: #teamsSelect)
+3. Click on '+' sign to create a new team.
+4. In Team name field hit "space" button 3 times or more.
+Expected result: Not able to create a team with no name.
+Actual: Able to create a team with no name.
+
+
+5. Update/Create project: unclear message for Short Name field
+Steps:
+1. Go to project page.
+2. Hit Create / Update project: in Short name field type already used short name for another project.
+Expected result: Field name is "Short name" and in message should be used the field name.
+Actual result: The message: "Project with this CODE already exists."
+
+
+6. API: 502 Bad Gateway for GET /projects/business_units when request a project without business_unit
+Steps:
+1. Go to Swagger, GET /projects/business_units
+2. In project_ids type project_id without business unit, type valid token, hit 'try it out'
+Expected result:
+

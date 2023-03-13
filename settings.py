@@ -1,0 +1,2 @@
+VALID_EMAIL = "987tess@gmail.com"
+VALID_PASSWORD = "QQ123!@1"

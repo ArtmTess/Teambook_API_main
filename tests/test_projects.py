@@ -37,12 +37,12 @@ def test_activate_project():
     project_id = projects.create_project()[1]
     projects.deactivate_project(project_id)
     status = projects.activate_project(project_id)
+    projects.delete_project(project_id)
     assert status == 200
 
 
 def test_delete_project():
     project_id = projects.create_project()[1]
-    projects.deactivate_project(project_id)
     status = projects.delete_project(project_id)
     assert status == 200
 

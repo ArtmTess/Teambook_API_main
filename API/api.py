@@ -10,7 +10,7 @@ class TeamBookAPI:
         self.base_url = 'https://web.teambooktest.com/api/'
 
     def get_token(self) -> json:
-        """Request to swagger to get unique token by valid email and password"""
+        """Request to get unique token by valid email and password"""
         data = {'user[email]': VALID_EMAIL,
                 'user[password]': VALID_PASSWORD}
         res = requests.post(self.base_url + 'auth/login', data)
@@ -23,8 +23,8 @@ class TeamBookAPI:
         """ Post method to create a new project with only required fields"""
         my_token = self.get_token()[0]
         data = {
-            "name": "New_API_R1",
-            "code": "R1",
+            "name": "New_API_R951",
+            "code": "R951",
             "color": "#EA8FEA",
             'active': True,
             "kind": "billable",
@@ -41,16 +41,16 @@ class TeamBookAPI:
         """ Post method to create a new project with all fields"""
         my_token = self.get_token()[0]
         data = {
-            "name": "New_API123456",
-            "code": "Test123456",
+            "name": "New_API951",
+            "code": "Test951",
             "color": "#B9F3FC",
             'active': True,
             "kind": "billable",
             'icon_id': 1,
             'estimated': 80,
             'notes': 'test',
-            'client_id': 5395,
-            'manager_id': 8613,
+            'client_id': 5563,
+            'manager_id': 9526,
             'status': 'Done',
             'business_unit': 'test',
             'token': my_token
@@ -65,31 +65,36 @@ class TeamBookAPI:
     def deactivate_project(self, project_id) -> json:
         """ Request to deactivate a project """
         my_token = self.get_token()[0]
+        project_id = self.create_project()[0]
         data = {
             'token': my_token,
-            'project_ids[]': '22048'
+            'project_ids[]': project_id
         }
         res = requests.patch(self.base_url + 'projects/deactivate', data=data)
         status = res.status_code
+        print(project_id)
         return status
 
     def activate_project(self, project_id) -> json:
         """ Request to activate a project """
         my_token = self.get_token()[0]
+        project_id = self.create_project()[0]
         data = {
             'token': my_token,
-            'project_ids[]': '22048'
+            'project_ids[]': project_id
         }
         res = requests.patch(self.base_url + 'projects/activate', data=data)
         status = res.status_code
+        print(project_id)
         return status
 
     def delete_project(self, project_id) -> json:
         """ Request to delete a project """
         my_token = self.get_token()[0]
+        project_id = self.create_project()[0]
         data = {
             'token': my_token,
-            'project_ids[]': '22047'
+            'project_ids[]': project_id
         }
         res = requests.patch(self.base_url + 'projects/delete', data=data)
         status = res.status_code

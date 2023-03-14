@@ -24,7 +24,7 @@ class TeamBookAPI:
         my_token = self.get_token()[0]
         data = {
             "name": "New_API_R952",
-            "code": "R951",
+            "code": "R952",
             "color": "#EA8FEA",
             'active': True,
             "kind": "billable",
@@ -42,7 +42,7 @@ class TeamBookAPI:
         my_token = self.get_token()[0]
         data = {
             "name": "New_API952",
-            "code": "Test951",
+            "code": "Test952",
             "color": "#B9F3FC",
             'active': True,
             "kind": "billable",

@@ -23,7 +23,7 @@ class TeamBookAPI:
         """ Post method to create a new project with only required fields"""
         my_token = self.get_token()[0]
         data = {
-            "name": "New_API_R951",
+            "name": "New_API_R952",
             "code": "R951",
             "color": "#EA8FEA",
             'active': True,
@@ -41,7 +41,7 @@ class TeamBookAPI:
         """ Post method to create a new project with all fields"""
         my_token = self.get_token()[0]
         data = {
-            "name": "New_API951",
+            "name": "New_API952",
             "code": "Test951",
             "color": "#B9F3FC",
             'active': True,
